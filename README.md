@@ -4,7 +4,7 @@ Demo project that draws a complete graph between windows. Demonstrates two
 approaches to communicating across browser windows of the same origin: shared
 memory (`localStorage`) and message passing (`BroadcastChannel`).
 
-https://github.com/user-attachments/assets/f05ea774-4110-4912-9cc9-93cbe36d50d2
+![Demo](./example.gif)
 
 ## Local setup
 
