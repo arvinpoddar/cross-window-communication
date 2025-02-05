@@ -21,14 +21,14 @@ export function useBroadcastWindowCenter(center: Point): void {
     };
   }, [windowId]);
 
-  const joinedNetwork = useRef(false);
+  const hasJoinedNetwork = useRef(false);
   useEffect(() => {
-    if (joinedNetwork.current) {
-      broadcastCenterChange(windowId, center);
-    } else {
-      joinedNetwork.current = true;
+    if (!hasJoinedNetwork.current) {
       joinNetwork(windowId, center);
+      hasJoinedNetwork.current = true;
+      return;
     }
+    broadcastCenterChange(windowId, center);
   }, [windowId, center]);
 
   useEffect(() => {
